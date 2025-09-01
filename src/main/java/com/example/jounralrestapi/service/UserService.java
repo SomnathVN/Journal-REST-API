@@ -1,6 +1,7 @@
 package com.example.jounralrestapi.service;
 
 import java.util.Arrays;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -30,7 +31,12 @@ public class UserService {
         userRepository.save(user);
         return user;
     }
+
     public User findByUserName(String userName){
         return userRepository.findByUserName(userName);
+    }
+
+    public List<?> getAllUser(){
+        return userRepository.findAll();
     }
 }
