@@ -1,7 +1,18 @@
-spring.application.name=jounralrestapi
-server.port=8082
-spring.data.mongodb.uri=mongodb+srv://vcartproject:DN7YRhfpnHMN0o9B@cluster0.al87hbm.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0
-spring.data.mongodb.database=jounraldb
-spring.data.mongodb.auto-index-creation=true
+#spring.application.name=jounralrestapi
+#server.port=8082
+#spring.data.mongodb.uri=mongodb+srv://vcartproject:DN7YRhfpnHMN0o9B@cluster0.al87hbm.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0
+#spring.data.mongodb.database=jounraldb
+#spring.data.mongodb.auto-index-creation=true
 #spring.data.mongodb.username=vcartproject
 #spring.data.mongodb.password=DN7YRhfpnHMN0o9B
+spring:
+  application:
+    name: jounralrestapi
+  data:
+    mongodb:
+      uri: mongodb+srv://vcartproject:DN7YRhfpnHMN0o9B@cluster0.al87hbm.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0
+      database: journaldb
+      auto-index-creation: true
+
+server:
+  port: 8082
