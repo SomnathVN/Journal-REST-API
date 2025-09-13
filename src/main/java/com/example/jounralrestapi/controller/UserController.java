@@ -53,7 +53,9 @@ public class UserController {
         WeatherResponse weatherResponse = weatherService.getWeather(city);
         String greetings = "";
         if(weatherResponse!=null){
-            greetings = " temparature feels like "+weatherResponse.getMain().getFeelsLike();
+            double temp = weatherResponse.getMain().getFeelsLike()-273.15;
+            String temperature = String.format("%.2f", temp);
+            greetings = " temparature feels like "+'"'+temperature+'"'+"°C";
         }
         return  new ResponseEntity<>("Hii "+authentication.getName()+greetings,HttpStatus.OK);
     }
