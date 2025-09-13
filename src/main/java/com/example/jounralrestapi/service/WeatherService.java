@@ -3,6 +3,7 @@ package com.example.jounralrestapi.service;
 import com.example.jounralrestapi.api.response.WeatherResponse;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Component;
@@ -11,7 +12,9 @@ import org.springframework.web.client.RestTemplate;
 @Component
 @Slf4j
 public class WeatherService {
-    private static final String apiKey = "9c06f19f893bc84ecd48d20cc3c364ad";
+
+    @Value("${weather.api.key}")
+    private String apiKey;
     private static final String API = "https://api.openweathermap.org/data/2.5/weather?q=CITY&appid=API_KEY";
 
     @Autowired

@@ -13,3 +13,8 @@ server:
   port: 8082
   servlet:
     context-path: "/somnath"
+
+
+weather:
+  api:
+    key: 9c06f19f893bc84ecd48d20cc3c364ad
