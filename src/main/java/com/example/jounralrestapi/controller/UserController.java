@@ -14,6 +14,8 @@ import com.example.jounralrestapi.repository.UserRepository;
 import com.example.jounralrestapi.service.UserService;
 import org.springframework.web.client.RestTemplate;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/user")
 public class UserController {
@@ -58,5 +60,14 @@ public class UserController {
             greetings = " temparature feels like "+'"'+temperature+'"'+"°C";
         }
         return  new ResponseEntity<>("Hii "+authentication.getName()+greetings,HttpStatus.OK);
+    }
+
+    @GetMapping("/get-user-SA")
+    public ResponseEntity<?> getUserForSA() {
+        List<User> users = userService.getUserForSA();
+        if(users != null && !users.isEmpty()){
+            return new ResponseEntity<>(users,HttpStatus.OK);
+        }
+        return new ResponseEntity<>(HttpStatus.NO_CONTENT);
     }
 }

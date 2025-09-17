@@ -3,6 +3,7 @@ package com.example.jounralrestapi.service;
 import java.util.Arrays;
 import java.util.List;
 
+import com.example.jounralrestapi.repository.UserRepositoryImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Component;
@@ -18,6 +19,9 @@ public class UserService {
 
     @Autowired
     private PasswordEncoder passwordEncoder;
+
+    @Autowired
+    private UserRepositoryImpl userRepositoryImpl;
 
 
     public User saveNewEntry(User user){
@@ -38,5 +42,9 @@ public class UserService {
 
     public List<?> getAllUser(){
         return userRepository.findAll();
+    }
+
+    public List<User> getUserForSA() {
+        return userRepositoryImpl.getUserForSA();
     }
 }
