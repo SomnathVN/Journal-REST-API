@@ -56,8 +56,8 @@ public class UserScheduler {
         }
     }
 
-    //@Scheduled(cron = "0 0/10 * ? * *")
-    @Scheduled(cron = "* * * * * *")
+    @Scheduled(cron = "0 0/10 * ? * *")
+    //@Scheduled(cron = "* * * * * *")
     public void clearAppCache(){
         appCache.init();
     }
