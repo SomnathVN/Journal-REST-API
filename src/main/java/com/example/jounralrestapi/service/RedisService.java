@@ -32,7 +32,7 @@ public class RedisService {
             String jsonValue = objectMapper.writeValueAsString(o);
             redisTemplate.opsForValue().set(key,jsonValue,ttl, TimeUnit.SECONDS);
         } catch (Exception e) {
-           throw new RuntimeException("Exception ",e);
+           throw null;
         }
     }
 }
