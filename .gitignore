@@ -32,3 +32,15 @@ build/
 
 ### VS Code ###
 .vscode/
+
+### Configuration files with sensitive data ###
+*.yaml
+*.properties
+
+### Additional security ###
+*.log
+*.class
+.DS_Store
+Thumbs.db
+*.tmp
+*.temp
